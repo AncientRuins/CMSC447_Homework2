@@ -27,3 +27,4 @@ On the retrieve user points page, a user's points can be retrieved via their nam
 # Closing the Website
 To close the website, head back to the terminals you used to start the website. Here, you can hit Ctrl + C in both terminal channels, and it should terminate the process. If you attempt to refresh the website, it should indicate that there is no longer a website with that address.
 
+Note that the code and other files in this project directory take up several MBs of storage. Thus, if disk space is of importance, the directory should be deleted from your personal files after testing.
