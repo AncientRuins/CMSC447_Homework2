@@ -1,70 +1,29 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The tutorial at [Geeks-for-Geeks](https://www.geeksforgeeks.org/how-to-build-a-basic-crud-app-with-node-js-and-reactjs/) was very helpful in initially creating this website. Using this resource, I created the create-user and user-list pages. Everything else was created by me based on this code to achieve the functionality required by this project.
 
-## Available Scripts
-
-In the project directory, you can run:
-
+# Running the Website
+1. Clone the project to a convienient location and then cd to the directory in a terminal. You will need at least 2 channels open in the terminal.
+2. Before beginning, the following tools are required: Node Package Manager (npm) and MongoDB (Need to install the database software on the computer).
+3. In the first channel, cd to /crud-app/backend and in the second channel, cd to /crud-app .
+4. Then, run the following command in both channels
 ### `npm start`
+5. Running this in the backend folder boots up the server and the database for use. Running it in the crud-app folder sets up the website in development mode. After a few seconds, it should open up your browser to the website. If it does not, open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+6. If this does not work for whatever reason, you can contact me at my school email (fw88455@umbc.edu), and I can do a demo of the website for grading.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Using the Website
+The default page for the website is the user list, where all the users in the database can be seen. In this table, the name, id, and points of the user are visible. Also here is the option to delete a user. When that button is selected, an alert will pop up indicating the success (or failure) of the delete operation. Afterwards, the page should refresh to reflect the changes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The next page of interest is the create user page. Here, the user's information can be entered and, once the button is pressed, the user will be created if it is valid. There is input validation for these fields. Specifically, the name field accepts only strings and id and points accept only positive integers. All the code assumes that the name is entered in the format "First Name Last Name" . For id in particular, the backend checks to make sure that the id is unique. If all the criteria is met, then the user is created and a popup alert stating this is sent. If some of the criteria is not met, then a popup alert appears stating that something went wrong (probably a non-unique id).
 
-### `npm test`
+On the search user page, a user can be searched for using their id. If there is a person with that id, their information is displayed in the table. If there is no one with that id, then a popup alert shows up stating that there is no one with that id.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+On the retrieve user points page, a user's points can be retrieved via their name. This assumes the inputted name is in the same format as the name stored in the database. To ensure the name is correctly entered, refer to the user list. When the button is pressed, the points for all users with that specific name will show up in that table alongside their name. If nobody has that name, then a popup appears stating that there is no one in the database with that name.
 
-### `npm run build`
+# Issues
+1. There is an issue where the popups appear twice in a row. I have yet to find a fix for them, so they still appear.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Closing the Website
+To close the website, head back to the terminals you used to start the website. Here, you can hit Ctrl + C in both terminal channels, and it should terminate the process. If you attempt to refresh the website, it should indicate that there is no longer a website with that address.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
