@@ -25,7 +25,19 @@ router.get("/", (req, res) => {
 	});
 });
 
-router.get("/:id", (req, res, next) => {
+router.get("/getuser/:id", (req, res, next) => {
+	userSchema.find(req.params, (error, data) => {
+		if (error) {
+			return next(error);
+		} else {
+			res.status(200).json({
+				msg: data,
+			});
+		}
+	});
+});
+
+router.get("/getpoints/:name", (req, res, next) => {
 	userSchema.find(req.params, (error, data) => {
 		if (error) {
 			return next(error);

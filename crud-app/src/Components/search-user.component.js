@@ -8,20 +8,17 @@ const SearchUser = () => {
 	const [formValues, setFormValues] = useState({ id: '' });
 	const[users, setUsers] = useState([]);
 
-	console.log(users);
+	var count = 0;
 
 	const onSubmit = userObject => {
-		axios.get("http://localhost:4000/users/" + userObject.id)
+		axios.get("http://localhost:4000/users/getuser/" + userObject.id)
 			.then(({data}) => {
-				console.log(data);
 				setUsers(data);
-				console.log(users);
 			}).catch((err) => console.log(err));
 	};
 
 	const DataTable = () => {
 		if (users.length == 0) {
-			alert("No one with this id exists");
 			return;
 		} else if (users.msg.length == 0) {
 			alert("No one with this id exists");

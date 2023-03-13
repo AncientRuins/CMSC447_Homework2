@@ -7,6 +7,7 @@ import CreateUser from "./Components/create-user.component";
 import EditUser from "./Components/edit-user.component";
 import UserList from "./Components/user-list.component";
 import SearchUser from "./Components/search-user.component";
+import GetUserPoints from "./Components/get-user-points.component";
 
 const App = () => {
 return (
@@ -35,6 +36,12 @@ return (
 							</Nav>
 
 							<Nav>
+								<Link to={"/get-user-points"} className="nav-link">
+									Retrieve User Points
+								</Link>
+							</Nav>
+
+							<Nav>
 								<Link to={"/user-list"} className="nav-link">
 									User List
 								</Link>
@@ -54,6 +61,7 @@ return (
 								<Route path="/edit-user/:id" element={<EditUser />} />
 								<Route path="/user-list" element={<UserList />} />
 								<Route path="/search-user" element={<SearchUser />} />
+								<Route path="/get-user-points" element={<GetUserPoints />} />
 							</Routes>
 						</div>
 					</Col>
