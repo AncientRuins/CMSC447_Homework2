@@ -14,39 +14,52 @@ const GetUserPoints = () => {
 				setUsers(data);
 			}).catch((err) => console.log(err));
 
-		check();
 	};
-
-	console.log(users);
 
 	const check = () => {
 		if (users.length == 0) {
-			alert("No one with this name exists");
 			return;
 		} else if (users.msg.length == 0) {
 			alert("No one with this name exists");
 			return;
 		} else {
 			var i = 0;
+			var l = [];
 			while (i < users.msg.length) {
 				const user = users.msg[i];
-				alert("The person " + user.name + " has " + user.points + " points.");
 				i ++;
+				l.push(
+					<tr key={""+i}>
+						<td>{user.name}</td>
+						<td>{user.points}</td>
+						
+					</tr>
+				);
 			}
+
+			return l;
 		}
 	};
 
 	return (
 		<div className="encomp">
-			<div className="pointLabel"> 
-				When the button is pressed, an alert pops up with the users points.
-				Thus, popups need to be enabled.
-			</div>
 			<GetPointsForm initialValues={formValues}
 			onSubmit={onSubmit}
 			enableReinitialize>
 			Get User Points
 			</GetPointsForm>
+
+			<div className="table-wrapper">
+				<Table striped bordered hover>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Points</th>
+						</tr>
+					</thead>
+					<tbody>{check()}</tbody>
+				</Table>
+			</div>
 		</div>
 	);
 };
